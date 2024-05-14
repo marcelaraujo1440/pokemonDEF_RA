@@ -9,23 +9,24 @@ pokedex = []
 tentativas = 3
 
 def introducao():
-    print("*Professor Carvalho aparece*")
+    print("Professor Carvalho aparece")
     nomeJogador = input("Professor Carvalho: Olá treinador, bem-vindo ao mundo Pokémon. Eu sou o Professor Carvalho, como posso te chamar?\nDigite aqui seu nome: ")
  
     print(f"Professor Carvalho: É um prazer te conhecer, {nomeJogador}. Esta é a cidade de Pallet, na região de Kanto!\n")
     time.sleep(0.5)
     pokemon_inicial()
 def pokemon_inicial():
-    inicial=int(input("----Escolha um pokemon inicial----\n1-Charmander\n2-Bulbasauro\n3-Squirtle\n>>> "))
+    inicial=int(input("----Escolha um pokemon inicial----\n1-Charmander\n2-Squirtle\n3-Bulbassaur\n>>> "))
     if inicial == 1:
         pokedex.append('Charmander')
     elif inicial ==2:
-        pokedex.append('Charmander')
+        pokedex.append('Squirtle')
     elif inicial ==3:
-        pokedex.append('Charmander')
+        pokedex.append('Bulbassaur')
     elif inicial != 1 or inicial != 2 or inicial != 3:
         print("Digite uma opção válida...")
-        return inicial
+    print(f"Um {pokedex[0]}! Otima escolha!")
+    return inicial
 
 
 def escolha_pokemon():
@@ -49,7 +50,8 @@ def bioma(lista_pokemon, rep_lista):
     if pok in rep_lista:
         print(f'\nVocê encontrou um {pok}, mas você já possui este Pokémon!')
         return
- 
+    print(f"Você encontrou 3 pokebolas")
+    time.sleep(1)
     print(f'\n*{pok} apareceu*\n')
 
     capt_pokemon(pok, lista_pokemon, rep_lista)
@@ -79,31 +81,29 @@ def capt_pokemon(pokemon, lista_pokemon, rep_lista):
                 
 def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
     tentativas_local = tentativas
-    while True:
+    while tentativas_local > 0:
         novamente = input("\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
                  
         if novamente == 's':
-             tentativas_local -= 1
-        if tentativas_local == 0:
-            print("Você não conseguiu capturar o Pokémon, atingiu o limite de tentativas!")
-            
-            
-            num1 = random.randint(0,1)
-            num2 = random.randint(0,1)
+            num1 = random.randint(0,3)
+            num2 = random.randint(0,3)   
+
             if num1 == num2:
                     print("Você capturou esse pokémon!")
                     pokedex.append(pokemon)
                     rep_lista.append(pokemon)
                     return novamente
-            elif num1 != num2:
+            else:
                 print("O pokémon fugiu!")
-                return novamente
+                tentativas_local -= 1
+        
+               
         if novamente == 'n':
                 return novamente
-        elif novamente != 's' and novamente!= 'n':  
+        else:
                 print("Tente com uma opção válida!")   
-       
-                return novamente
+        print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
+        return novamente
                
 def abrir_pokedex():
     if len(pokedex) < 1:
