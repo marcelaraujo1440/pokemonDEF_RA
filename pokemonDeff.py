@@ -14,6 +14,20 @@ def introducao():
  
     print(f"Professor Carvalho: É um prazer te conhecer, {nomeJogador}. Esta é a cidade de Pallet, na região de Kanto!\n")
     time.sleep(0.5)
+    pokemon_inicial()
+def pokemon_inicial():
+    inicial=int(input("----Escolha um pokemon inicial----\n1-Charmander\n2-Bulbasauro\n3-Squirtle\n>>> "))
+    if inicial == 1:
+        pokedex.append('Charmander')
+    elif inicial ==2:
+        pokedex.append('Charmander')
+    elif inicial ==3:
+        pokedex.append('Charmander')
+    elif inicial != 1 or inicial != 2 or inicial != 3:
+        print("Digite uma opção válida...")
+        return inicial
+
+
 def escolha_pokemon():
     while True:
         escolha = int(input(f'\nO que deseja fazer?\n(1) Ir para a Floresta\n(2) Ir para a Caverna\n(3) Pokedex\n(4) Sair \n>>> '))
@@ -66,8 +80,8 @@ def capt_pokemon(pokemon, lista_pokemon, rep_lista):
 def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
     tentativas_local = tentativas
     while True:
-        novamente = input("você nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
-        print(f"Você ainda tem {tentativas_local} tentativas")          
+        novamente = input("\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
+                 
         if novamente == 's':
              tentativas_local -= 1
         if tentativas_local == 0:
