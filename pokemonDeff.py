@@ -89,8 +89,8 @@ def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
             print("Você não conseguiu capturar o Pokémon, atingiu o limite de tentativas!")
             
             
-            num1 = random.randint(0,1)
-            num2 = random.randint(0,1)
+            num1 = random.randint(0,3)
+            num2 = random.randint(0,3)
             if num1 == num2:
                     print("Você capturou esse pokémon!")
                     pokedex.append(pokemon)
