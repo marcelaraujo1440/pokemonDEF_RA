@@ -16,13 +16,13 @@ def introducao():
     time.sleep(0.5)
     pokemon_inicial()
 def pokemon_inicial():
-    inicial=int(input("----Escolha um pokemon inicial----\n1-Charmander\n2-Bulbassaur\n3-Squirtle\n>>> "))
+    inicial=int(input("----Escolha um pokemon inicial----\n1-Charmander\n2-Squirtle\n3-Bulbassaur\n>>> "))
     if inicial == 1:
         pokedex.append('Charmander')
     elif inicial ==2:
-        pokedex.append('Bulbassaur')
-    elif inicial ==3:
         pokedex.append('Squirtle')
+    elif inicial ==3:
+        pokedex.append('Bulbassaur')
     elif inicial != 1 or inicial != 2 or inicial != 3:
         print("Digite uma opção válida...")
     print(f"Um {pokedex[0]}! Otima escolha!")
