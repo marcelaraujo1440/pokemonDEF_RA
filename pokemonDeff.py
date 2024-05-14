@@ -85,19 +85,9 @@ def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
         novamente = input("\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
                  
         if novamente == 's':
-<<<<<<< HEAD
             num1 = random.randint(0,3)
             num2 = random.randint(0,3)   
 
-=======
-             tentativas_local -= 1
-        if tentativas_local == 0:
-            print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
-            
-            
-            num1 = random.randint(0,3)
-            num2 = random.randint(0,3)
->>>>>>> 80a15bb78e9075efe835d3cf96cac8334e535eff
             if num1 == num2:
                     print("Você capturou esse pokémon!")
                     pokedex.append(pokemon)
