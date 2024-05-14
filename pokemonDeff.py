@@ -50,7 +50,8 @@ def bioma(lista_pokemon, rep_lista):
     if pok in rep_lista:
         print(f'\nVocê encontrou um {pok}, mas você já possui este Pokémon!')
         return
- 
+    print(f"Você encontrou 3 pokebolas")
+    time.sleep(1)
     print(f'\n*{pok} apareceu*\n')
 
     capt_pokemon(pok, lista_pokemon, rep_lista)
@@ -86,7 +87,7 @@ def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
         if novamente == 's':
              tentativas_local -= 1
         if tentativas_local == 0:
-            print("Você não conseguiu capturar o Pokémon, atingiu o limite de tentativas!")
+            print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
             
             
             num1 = random.randint(0,3)
