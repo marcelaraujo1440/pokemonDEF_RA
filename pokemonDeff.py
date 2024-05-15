@@ -52,7 +52,7 @@ def bioma(lista_pokemon, rep_lista):
         return
     print(f"Você encontrou 3 pokebolas")
     time.sleep(1)
-    print(f'\n*{pok} apareceu*\n')
+    print(f'\n*{pok} apareceu*\nVocê possui {tentativas} pokebolas')
 
     capt_pokemon(pok, lista_pokemon, rep_lista)
 
@@ -82,7 +82,7 @@ def capt_pokemon(pokemon, lista_pokemon, rep_lista):
 def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
     tentativas_local = tentativas
     while tentativas_local > 0:
-        novamente = input("\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
+        novamente = input(f"\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente?\n Voce tem {tentativas} pokebolas\n (s/n)\n>>>")
                  
         if novamente == 's':
             num1 = random.randint(0,3)
@@ -100,9 +100,10 @@ def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
                
         if novamente == 'n':
                 return novamente
-        else:
+        if novamente != 'n' or novamente != 's':
                 print("Tente com uma opção válida!")   
-        print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
+        if tentativas == 0:
+            print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
         return novamente
                
 def abrir_pokedex():
