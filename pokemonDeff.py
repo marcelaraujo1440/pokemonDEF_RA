@@ -79,32 +79,30 @@ def capt_pokemon(pokemon, lista_pokemon, rep_lista):
                     return captura
                 
                 
-def tentar_novamente(pokemon, Lista_pokemon,rep_lista):
+def tentar_novamente(pokemon, lista_pokemon, rep_lista):
     tentativas_local = tentativas
     while tentativas_local > 0:
-        novamente = input("\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente? (s/n)\n>>>")
-                 
-        if novamente == 's':
-            num1 = random.randint(0,3)
-            num2 = random.randint(0,3)   
-
-            if num1 == num2:
-                    print("Você capturou esse pokémon!")
-                    pokedex.append(pokemon)
-                    rep_lista.append(pokemon)
-                    return novamente
-            else:
-                print("O pokémon fugiu!")
-                tentativas_local -= 1
+        novamente = input("\nVocê não conseguiu capturar esse Pokémon, deseja tentar novamente? (s/n)\n>>>")
         
-               
-        if novamente == 'n':
+        if novamente == 's':
+            num1 = random.randint(0, 3)
+            num2 = random.randint(0, 3)
+            if num1 == num2:
+                print("Você capturou esse Pokémon!")
+                pokedex.append(pokemon)
+                rep_lista.append(pokemon)
                 return novamente
+            else:
+                print("O Pokémon fugiu!")
+            tentativas_local -= 1
+            break
+        elif novamente == 'n':
+            return novamente
         else:
-                print("Tente com uma opção válida!")   
-        print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
-        return novamente
-               
+            print("Digite uma opção válida!")
+    print("Você não conseguiu capturar o Pokémon!")
+    return novamente
+
 def abrir_pokedex():
     if len(pokedex) < 1:
         print("Você ainda não capturou nenhum Pokémon!")
