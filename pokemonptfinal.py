@@ -52,7 +52,7 @@ def bioma(lista_pokemon, rep_lista):
         return
     print(f"Você encontrou 3 pokebolas")
     time.sleep(1)
-    print(f'\n*{pok} apareceu*\nVocê possui {tentativas} pokebolas')
+    print(f'\n*{pok} apareceu*\n')
 
     capt_pokemon(pok, lista_pokemon, rep_lista)
 
@@ -82,24 +82,7 @@ def capt_pokemon(pokemon, lista_pokemon, rep_lista):
 def tentar_novamente(pokemon, lista_pokemon, rep_lista):
     tentativas_local = tentativas
     while tentativas_local > 0:
-<<<<<<< HEAD
         novamente = input("\nVocê não conseguiu capturar esse Pokémon, deseja tentar novamente? (s/n)\n>>>")
-=======
-        novamente = input(f"\nvocê nao conseguiu capturar esse pokemon, deseja tentar novamente?\n Voce tem {tentativas} pokebolas\n (s/n)\n>>>")
-                 
-        if novamente == 's':
-            num1 = random.randint(0,3)
-            num2 = random.randint(0,3)   
-
-            if num1 == num2:
-                    print("Você capturou esse pokémon!")
-                    pokedex.append(pokemon)
-                    rep_lista.append(pokemon)
-                    return novamente
-            else:
-                print("O pokémon fugiu!")
-                tentativas_local -= 1
->>>>>>> 39fb8219267d7d24c67dd5270225ed080588ceba
         
         if novamente == 's':
             num1 = random.randint(0, 3)
@@ -109,7 +92,6 @@ def tentar_novamente(pokemon, lista_pokemon, rep_lista):
                 pokedex.append(pokemon)
                 rep_lista.append(pokemon)
                 return novamente
-<<<<<<< HEAD
             else:
                 print("O Pokémon fugiu!")
             tentativas_local -= 1
@@ -118,17 +100,9 @@ def tentar_novamente(pokemon, lista_pokemon, rep_lista):
             return novamente
         else:
             print("Digite uma opção válida!")
-    print("Você não conseguiu capturar o Pokémon!")
+    print("Você não conseguiu capturar o Pokémon, e acabaram suas pokébolas!")
     return novamente
 
-=======
-        if novamente != 'n' or novamente != 's':
-                print("Tente com uma opção válida!")   
-        if tentativas == 0:
-            print("Você não conseguiu capturar o Pokémon, e acabaram suas pokebolas!")
-        return novamente
-               
->>>>>>> 39fb8219267d7d24c67dd5270225ed080588ceba
 def abrir_pokedex():
     if len(pokedex) < 1:
         print("Você ainda não capturou nenhum Pokémon!")
